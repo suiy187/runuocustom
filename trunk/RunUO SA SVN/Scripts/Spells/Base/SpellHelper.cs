@@ -90,11 +90,11 @@ namespace Server.Spells
 			{
 				BaseMulti multi = sector.Multis[i];
 
-				if( houses && multi is BaseHouse )
+				if( multi is BaseHouse )
 				{
 					BaseHouse bh = (BaseHouse)multi;
 
-					if(bh.IsInside( p, 16 ) || (housingrange > 0 && bh.InRange(p, housingrange)))
+					if( ( houses && bh.IsInside( p, 16 ) ) || ( housingrange > 0 && bh.InRange( p, housingrange ) ) )
 						return true;
 				}
 				else if( multi.Contains( p ) )

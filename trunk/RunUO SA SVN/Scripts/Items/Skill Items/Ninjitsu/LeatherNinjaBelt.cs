@@ -310,8 +310,8 @@ namespace Server.Items
 
 			if ( IsChildOf( from ) )
 			{
-				list.Add( new NinjaWeapon.LoadEntry( this ) );
-				list.Add( new NinjaWeapon.UnloadEntry( this ) );
+				list.Add(new NinjaWeapon.LoadEntry(this, 6222));
+				list.Add(new NinjaWeapon.UnloadEntry(this, 6222));
 			}
 		}
 
@@ -326,7 +326,7 @@ namespace Server.Items
 			Poison.Serialize( m_Poison, writer );
 			writer.Write( (int) m_PoisonCharges );
 		}
-		
+
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
