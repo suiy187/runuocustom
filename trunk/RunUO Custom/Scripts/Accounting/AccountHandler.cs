@@ -35,7 +35,20 @@ namespace Server.Misc
 			set{ m_LockdownLevel = value; }
 		}
 
-		private static CityInfo[] StartingCities = new CityInfo[]
+		private static CityInfo[] m_StartingCitiesSA = new CityInfo[]
+			{
+				new CityInfo( "New Haven",	"New Haven Bank",			3498,  2572,   14,   1150168 ),
+				new CityInfo( "Yew",		"The Empath Abbey",			633,   858,    0,    1075072 ),
+				new CityInfo( "Minoc",		"The Barnacle",				2476,  413,    15,   1075073 ),
+				new CityInfo( "Britain",	"The Wayfarer's Inn",		1585,  1591,   20,   1075074 ),
+				new CityInfo( "Moonglow",	"The Scholars Inn",			4408,  1168,   0,    1075075 ),
+				new CityInfo( "Trinsic",	"The Traveler's Inn",		1845,  2745,   0,    1075076 ),
+				new CityInfo( "Jhelom",		"The Mercenary Inn",		1374,  3826,   0,    1075078 ),
+				new CityInfo( "Skara Brae",	"The Falconer's Inn",		618,   2234,   0,    1075079 ),
+				new CityInfo( "Royal City",	"Ter Mur Royal City Inn",	738,   3486,   -19,  Map.TerMur, 1150169 ),
+			};
+
+		private static CityInfo[] m_StartingCitiesOld = new CityInfo[]
 			{
 				new CityInfo( "Yew",		"The Empath Abbey",			633,	858,	0  ),
 				new CityInfo( "Minoc",		"The Barnacle",				2476,	413,	15 ),
@@ -48,6 +61,8 @@ namespace Server.Misc
 				new CityInfo( "Vesper",		"The Ironwood Inn",			2771,	976,	0  ),
 				new CityInfo( "Haven",		"Buckler's Hideaway",		3667,	2625,	0  )
 			};
+
+		public static CityInfo[] StartingCities { get { return Core.SA ? m_StartingCitiesSA : m_StartingCitiesOld; } }
 
 		private static bool PasswordCommandEnabled = false;
 
@@ -62,9 +77,8 @@ namespace Server.Misc
 
 			if ( Core.AOS )
 			{
-				//CityInfo haven = new CityInfo( "Haven", "Uzeraan's Mansion", 3618, 2591, 0 );
 				CityInfo haven = new CityInfo( "Haven", "Uzeraan's Mansion", 3503, 2574, 14 );
-				StartingCities[StartingCities.Length - 1] = haven;
+				m_StartingCitiesOld[m_StartingCitiesOld.Length - 1] = haven;
 			}
 		}
 

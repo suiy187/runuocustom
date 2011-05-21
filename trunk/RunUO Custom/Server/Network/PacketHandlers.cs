@@ -2312,7 +2312,10 @@ namespace Server.Network
 
 					state.Send( SupportedFeatures.Instantiate( state ) );
 
-				state.Send( new CharacterList( state.Account, state.CityInfo ) );
+				if ( !state.SelectableStartingCity )
+					state.Send( new CharacterListOld( state.Account, state.CityInfo ) );
+				else
+					state.Send( new CharacterList( state.Account, state.CityInfo ) );
 			}
 			else
 			{
@@ -2402,6 +2405,7 @@ namespace Server.Network
 
 				state.ServerInfo = info;
 
+				state.Send( new ClientVersionReq() );
 				state.Send( new AccountLoginAck( info ) );
 			}
 		}

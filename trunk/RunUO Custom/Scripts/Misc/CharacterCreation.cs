@@ -750,12 +750,12 @@ namespace Server.Misc
 
 		private static CityInfo GetStartLocation( CharacterCreatedEventArgs args, bool isYoung )
 		{
-			if( Core.ML )
+			if ( Core.ML )
 			{
-				//if( args.State != null && args.State.NewHaven )
-				return m_NewHavenInfo;	//We don't get the client Version until AFTER Character creation
+				if ( ( !Core.SA || isYoung ) && args.State != null && args.State.NewHaven )
+					return m_NewHavenInfo;
 
-				//return args.City;  TODO: Uncomment when the old quest system is actually phased out
+				return args.City;
 			}
 
 			bool useHaven = isYoung;
