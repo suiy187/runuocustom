@@ -752,7 +752,7 @@ namespace Server.Misc
 		{
 			if ( Core.ML )
 			{
-				if ( ( !Core.SA || isYoung ) && args.State != null && args.State.NewHaven )
+				if ( ( !Core.HS || isYoung ) && args.State != null && args.State.NewHaven )
 					return m_NewHavenInfo;
 
 				return args.City;

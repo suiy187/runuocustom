@@ -6,6 +6,7 @@
  *   email                : info@runuo.com
  *
  *   $Id: ExpansionInfo.cs 598 2010-12-08 05:29:16Z mark $
+ *   RUOC ExpansionInfo.cs 16  2011-05-22 jeremymcc21
  *
  ***************************************************************************/
 
@@ -32,7 +33,8 @@ namespace Server
 		AOS,
 		SE,
 		ML,
-		SA
+		SA,
+        HS
 	}
 
 	[Flags]
@@ -71,8 +73,8 @@ namespace Server
 		Unk6					= 0x00004000,
 		Unk7					= 0x00008000,
 		SA						= 0x00010000,
-
-
+        HS                      = 0x00020000,
+        
 		ExpansionNone	= None,
 		ExpansionT2A	= T2A,
 		ExpansionUOR	= ExpansionT2A	| UOR,
@@ -81,7 +83,8 @@ namespace Server
 		ExpansionAOS	= ExpansionLBR	| AOS	| Unk7,
 		ExpansionSE		= ExpansionAOS	| SE,
 		ExpansionML		= ExpansionSE	| ML	| Unk2,
-		ExpansionSA		= ExpansionML	| SA
+		ExpansionSA		= ExpansionML	| SA,
+        ExpansionHS     = ExpansionSA   | HS
 	}
 
 	[Flags]
@@ -112,7 +115,8 @@ namespace Server
 		ExpansionAOS	= ContextMenus	| AOS,
 		ExpansionSE		= ExpansionAOS	| SE,
 		ExpansionML		= ExpansionSE	| ML,
-		ExpansionSA		= ExpansionML | Unk8
+		ExpansionSA		= ExpansionML | Unk8,
+        ExpansionHS     = ExpansionSA | Unk8
 	}
 
 	public class ExpansionInfo
@@ -128,8 +132,9 @@ namespace Server
 				new ExpansionInfo( 5, "Age of Shadows",		ClientFlags.Malas,		FeatureFlags.ExpansionAOS,	CharacterListFlags.ExpansionAOS,	0x0000 ),
 				new ExpansionInfo( 6, "Samurai Empire",		ClientFlags.Tokuno,		FeatureFlags.ExpansionSE,	CharacterListFlags.ExpansionSE,		0x00C0 ), // 0x20 | 0x80
 				new ExpansionInfo( 7, "Mondain's Legacy",	new ClientVersion( "5.0.0a" ),	FeatureFlags.ExpansionML,	CharacterListFlags.ExpansionML,		0x02C0 ), // 0x20 | 0x80 | 0x200
-				new ExpansionInfo( 8, "Stygian Abyss",		ClientFlags.TerMur,		FeatureFlags.ExpansionSA,	CharacterListFlags.ExpansionSA,		0x102C0 ) // 0x20 | 0x80 | 0x200 | 0x10000
-			};
+				new ExpansionInfo( 8, "Stygian Abyss",		ClientFlags.TerMur,		FeatureFlags.ExpansionSA,	CharacterListFlags.ExpansionSA,		0x102C0 ), // 0x20 | 0x80 | 0x200 | 0x10000
+                new ExpansionInfo( 9, "High Seas",          ClientFlags.TerMur,     FeatureFlags.ExpansionHS,   CharacterListFlags.ExpansionHS,     0x102C0 ) //CustomHousingFlag is unknown.  Using SA flag instead.
+            };
 
 		private string m_Name;
 		private int m_ID, m_CustomHousingFlag;

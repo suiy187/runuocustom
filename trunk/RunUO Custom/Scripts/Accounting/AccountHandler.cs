@@ -35,7 +35,7 @@ namespace Server.Misc
 			set{ m_LockdownLevel = value; }
 		}
 
-		private static CityInfo[] m_StartingCitiesSA = new CityInfo[]
+		private static CityInfo[] m_StartingCitiesHS = new CityInfo[]
 			{
 				new CityInfo( "New Haven",	"New Haven Bank",			3498,  2572,   14,   1150168 ),
 				new CityInfo( "Yew",		"The Empath Abbey",			633,   858,    0,    1075072 ),
@@ -62,7 +62,7 @@ namespace Server.Misc
 				new CityInfo( "Haven",		"Buckler's Hideaway",		3667,	2625,	0  )
 			};
 
-		public static CityInfo[] StartingCities { get { return Core.SA ? m_StartingCitiesSA : m_StartingCitiesOld; } }
+		public static CityInfo[] StartingCities { get { return Core.HS ? m_StartingCitiesHS : m_StartingCitiesOld; } }
 
 		private static bool PasswordCommandEnabled = false;
 

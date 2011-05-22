@@ -6,6 +6,7 @@
  *   email                : info@runuo.com
  *
  *   $Id: Main.cs 651 2010-12-28 09:24:08Z asayre $
+ *   RUOC ExpansionInfo.cs 16  2011-05-22 jeremymcc21
  *
  ***************************************************************************/
 
@@ -201,6 +202,11 @@ namespace Server
 		{
 			get { return m_Expansion >= Expansion.SA; }
 		}
+
+        public static bool HS
+        {
+            get { return m_Expansion >= Expansion.HS; }
+        }
 
 		#endregion
 
