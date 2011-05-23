@@ -110,7 +110,7 @@ namespace Server.Commands
 						{
 							item.Delete();
 						}
-
+						
 						if ( pack == null )
 						{
 							pack = new Backpack();
@@ -145,9 +145,7 @@ namespace Server.Commands
 							Spellbook book2 = new NecromancerSpellbook( (ulong)0xffff );
 							Spellbook book3 = new BookOfChivalry();
 							Spellbook book4 = new BookOfBushido();
-                            Spellbook book5 = new BookOfNinjitsu();
-
-                            PackItem(new GMHidingStone());
+							Spellbook book5 = new BookOfNinjitsu();
 
 							PackItem( book1 );
 							PackItem( book2 );

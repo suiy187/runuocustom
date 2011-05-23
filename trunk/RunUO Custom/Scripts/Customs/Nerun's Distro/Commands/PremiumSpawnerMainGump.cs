@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.IO;
 using Server;
-using Server.Mobiles; 
+using Server.Mobiles;
 using Server.Items;
 using Server.Commands; 
 using Server.Network;
@@ -53,7 +53,7 @@ namespace Server.Gumps
 
 			AddBackground( 0, 0, 267, 450, 5054 );
 
-			AddHtml( 8, 8, 250, 42, "        PREMIUM SPAWNER<BR>" + "by Nerun                   Rev.6", true, false );
+			AddHtml( 8, 8, 250, 42, "        PREMIUM SPAWNER<BR>" + "by Nerun                   Rev.11", true, false );
 
 			AddBlackAlpha( 8, 58, 250, 50 );
 
@@ -85,8 +85,8 @@ namespace Server.Gumps
 			AddLabel( 45, 218, 52, "Tokuno" );
 			AddButton( 25, 218, 0x845, 0x846, 10105, GumpButtonType.Reply, 0 );
 
-			//AddLabel( 165, 138, 52, "Ter Mur" );
-			//AddButton( 145, 138, 0x845, 0x846, 10106, GumpButtonType.Reply, 0 );
+			AddLabel( 165, 138, 52, "Ter Mur" );
+			AddButton( 145, 138, 0x845, 0x846, 10106, GumpButtonType.Reply, 0 );
 
 			AddLabel( 10, 256, 52, "UNLOAD SPAWNS" );
 
@@ -105,8 +105,8 @@ namespace Server.Gumps
 			AddLabel( 45, 358, 52, "Tokuno" );
 			AddButton( 25, 358, 0x845, 0x846, 10108, GumpButtonType.Reply, 0 );
 
-			//AddLabel( 165, 278, 52, "Ter Mur" );
-			//AddButton( 145, 278, 0x845, 0x846, 10109, GumpButtonType.Reply, 0 );
+			AddLabel( 165, 278, 52, "Ter Mur" );
+			AddButton( 145, 278, 0x845, 0x846, 10109, GumpButtonType.Reply, 0 );
 
 			AddLabel( 120, 410, 200, "1/3" );
 			AddButton( 145, 410, 0x15E1, 0x15E5, 0, GumpButtonType.Page, 2 );
@@ -115,7 +115,7 @@ namespace Server.Gumps
 
 			AddBackground( 0, 0, 267, 450, 5054 );
 
-			AddHtml( 8, 8, 250, 42, "        PREMIUM SPAWNER<BR>" + "by Nerun                   Rev.6", true, false );
+			AddHtml( 8, 8, 250, 42, "        PREMIUM SPAWNER<BR>" + "by Nerun                   Rev.11", true, false );
 
 			AddBlackAlpha( 8, 58, 250, 110 );
 
@@ -173,7 +173,7 @@ namespace Server.Gumps
 
 			AddBackground( 0, 0, 267, 450, 5054 );
 
-			AddHtml( 8, 8, 250, 42, "        PREMIUM SPAWNER<BR>" + "by Nerun                   Rev.6", true, false );
+			AddHtml( 8, 8, 250, 42, "        PREMIUM SPAWNER<BR>" + "by Nerun                   Rev.11", true, false );
 
 			AddBlackAlpha( 8, 58, 250, 50 );
 
@@ -335,12 +335,12 @@ namespace Server.Gumps
 					CommandSystem.Handle( from, String.Format( "{0}spawner", prefix ) );
 					break;
 				}
-				/*case 10106:
+				case 10106:
 				{
 					CommandSystem.Handle( from, String.Format( "{0}spawntermur", prefix ) );
 					CommandSystem.Handle( from, String.Format( "{0}spawner", prefix ) );
 					break;
-				}*/
+				}
 				case 10107:
 				{
 					CommandSystem.Handle( from, String.Format( "{0}unloadmalas", prefix ) );
@@ -353,12 +353,12 @@ namespace Server.Gumps
 					CommandSystem.Handle( from, String.Format( "{0}spawner", prefix ) );
 					break;
 				}
-				/*case 10109:
+				case 10109:
 				{
 					CommandSystem.Handle( from, String.Format( "{0}unloadtermur", prefix ) );
 					CommandSystem.Handle( from, String.Format( "{0}spawner", prefix ) );
 					break;
-				}*/
+				}
 				case 10200:
 				{
 					CommandSystem.Handle( from, String.Format( "{0}rse", prefix ) );

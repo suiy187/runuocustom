@@ -55,7 +55,7 @@ namespace Server.Mobiles
 		public bool IsFullc{ get{ return ( m_CreaturesC != null && m_CreaturesC.Count >= m_CountC ); } }
 		public bool IsFulld{ get{ return ( m_CreaturesD != null && m_CreaturesD.Count >= m_CountD ); } }
 		public bool IsFulle{ get{ return ( m_CreaturesE != null && m_CreaturesE.Count >= m_CountE ); } }
-
+		
 		public List<string> CreaturesName
 		{
 			get { return m_CreaturesName; }
@@ -133,7 +133,7 @@ namespace Server.Mobiles
 				InvalidateProperties();
 			}
 		}
-		
+
 		public virtual int CreaturesNameCount { get { return m_CreaturesName.Count; } }
 		public virtual int CreaturesNameCountA { get { return m_CreaturesNameA.Count; } }
 		public virtual int CreaturesNameCountB { get { return m_CreaturesNameB.Count; } }
@@ -233,9 +233,9 @@ namespace Server.Mobiles
 			set { m_HomeRange = value; InvalidateProperties(); }
 		}
 
-		[CommandProperty( AccessLevel.GameMaster )]
+		[CommandProperty( AccessLevel.GameMaster )] 
 		public int WalkingRange 
-		{
+		{ 
 		   get { return m_WalkingRange; } 
 		   set { m_WalkingRange = value; InvalidateProperties(); } 
 		}
@@ -788,7 +788,7 @@ namespace Server.Mobiles
 			for ( int i = 0; i < m_CountE; i++ )
 				SpawnE();
 		}
-
+		
 		public void Spawn()
 		{
 			if ( CreaturesNameCount > 0 )
@@ -803,59 +803,59 @@ namespace Server.Mobiles
 		}
 
 		public void SpawnB()
-				{ 
+		{
 			if ( CreaturesNameCountB > 0 )
 				SpawnB( Utility.Random( CreaturesNameCountB ) );
 		}
 
 		public void SpawnC()
-					{
+		{
 			if ( CreaturesNameCountC > 0 )
 				SpawnC( Utility.Random( CreaturesNameCountC ) );
 		}
 
 		public void SpawnD()
-						{
+		{
 			if ( CreaturesNameCountD > 0 )
 				SpawnD( Utility.Random( CreaturesNameCountD ) );
-						}
+		}
 
 		public void SpawnE()
 		{
 			if ( CreaturesNameCountE > 0 )
 				SpawnE( Utility.Random( CreaturesNameCountE ) );
-					}
+		}
 
 		public void Spawn( string creatureName )
-					{
+		{
 			for ( int i = 0; i < m_CreaturesName.Count; i++ )
-						{
+			{
 				if ( m_CreaturesName[i] == creatureName )
-							{
+				{
 					Spawn( i );
 					break;
-							}
-						}
+				}
+			}
 		}
 
 		public void SpawnA( string creatureNameA )
 		{
 			for ( int i = 0; i < m_CreaturesNameA.Count; i++ )
-						{
+			{
 				if ( (string)m_CreaturesNameA[i] == creatureNameA )
 				{
 					SpawnA( i );
 					break;
 				}
-						}
-					}
+			}
+		}
 
 		public void SpawnB( string creatureNameB )
 		{
 			for ( int i = 0; i < m_CreaturesNameB.Count; i++ )
 			{
 				if ( (string)m_CreaturesNameB[i] == creatureNameB )
-					{
+				{
 					SpawnB( i );
 					break;
 				}
@@ -863,64 +863,64 @@ namespace Server.Mobiles
 		}
 
 		public void SpawnC( string creatureNameC )
-						{
+		{
 			for ( int i = 0; i < m_CreaturesNameC.Count; i++ )
-							{
+			{
 				if ( (string)m_CreaturesNameC[i] == creatureNameC )
-								{
+				{
 					SpawnC( i );
 					break;
 				}
-								}
-							}
+			}
+		}
 
 		public void SpawnD( string creatureNameD )
 		{
 			for ( int i = 0; i < m_CreaturesNameD.Count; i++ )
-							{
+			{
 				if ( (string)m_CreaturesNameD[i] == creatureNameD )
-								{
+				{
 					SpawnD( i );
 					break;
 				}
-								}
-								}
+			}
+		}
 
 		public void SpawnE( string creatureNameE )
-								{
+		{
 			for ( int i = 0; i < m_CreaturesNameE.Count; i++ )
-								{
+			{
 				if ( (string)m_CreaturesNameE[i] == creatureNameE )
-								{
+				{
 					SpawnE( i );
 					break;
-								}
-								}
-							}
+				}
+			}
+		}
 
 		protected virtual IEntity CreateSpawnedObject( int index )
-							{
+		{
 			if ( index >= m_CreaturesName.Count )
 				return null;
 
 			Type type = ScriptCompiler.FindTypeByName( ParseType( m_CreaturesName[index] ) );
 
 			if ( type != null )
-							{
+			{
 				try
-								{
+				{
 					return Build( CommandSystem.Split( m_CreaturesName[index] ) );
-								}
+				}
 				catch
-								{
-								}
+				{
+				}
 			}
 
 			return null;
 		}
 
 		protected virtual IEntity CreateSpawnedObjectA( int index )
-								{
+		{
 			if ( index >= m_CreaturesNameA.Count )
 				return null;
 
@@ -929,16 +929,16 @@ namespace Server.Mobiles
 			if ( type != null )
 			{
 				try
-								{
+				{
 					return Build( CommandSystem.Split( m_CreaturesNameA[index] ) );
-								}
+				}
 				catch
-								{
-								}
-								}
+				{
+				}
+			}
 
 			return null;
-							}
+		}
 
 		protected virtual IEntity CreateSpawnedObjectB( int index )
 		{
@@ -952,26 +952,26 @@ namespace Server.Mobiles
 				try
 				{
 					return Build( CommandSystem.Split( m_CreaturesNameB[index] ) );
-						}
+				}
 				catch
 				{
-					}
 				}
-
-			return null;
 			}
 
+			return null;
+		}
+
 		protected virtual IEntity CreateSpawnedObjectC( int index )
-			{
+		{
 			if ( index >= m_CreaturesNameC.Count )
 				return null;
 
 			Type type = ScriptCompiler.FindTypeByName( ParseType( m_CreaturesNameC[index] ) );
 
 			if ( type != null )
-		{
-				try
 			{
+				try
+				{
 					return Build( CommandSystem.Split( m_CreaturesNameC[index] ) );
 				}
 				catch
@@ -990,9 +990,9 @@ namespace Server.Mobiles
 			Type type = ScriptCompiler.FindTypeByName( ParseType( m_CreaturesNameD[index] ) );
 
 			if ( type != null )
-		{
-				try
 			{
+				try
+				{
 					return Build( CommandSystem.Split( m_CreaturesNameD[index] ) );
 				}
 				catch
@@ -1033,9 +1033,9 @@ namespace Server.Mobiles
 			string[,] props = null;
 
 			for ( int i = 0; i < args.Length; ++i )
-		{
-				if ( Insensitive.Equals( args[i], "set" ) )
 			{
+				if ( Insensitive.Equals( args[i], "set" ) )
+				{
 					int remains = args.Length - i - 1;
 
 					if ( remains >= 2 )
@@ -1045,7 +1045,7 @@ namespace Server.Mobiles
 						remains /= 2;
 
 						for ( int j = 0; j < remains; ++j )
-				{
+						{
 							props[j, 0] = args[i + (j * 2) + 1];
 							props[j, 1] = args[i + (j * 2) + 2];
 						}
@@ -1061,24 +1061,24 @@ namespace Server.Mobiles
 
 			if ( !Add.IsEntity( type ) ) {
 				return null;
-		}
+			}
 
 			PropertyInfo[] realProps = null;
 
 			if ( props != null )
-		{
+			{
 				realProps = new PropertyInfo[props.GetLength( 0 )];
 
 				PropertyInfo[] allProps = type.GetProperties( BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public );
 
 				for ( int i = 0; i < realProps.Length; ++i )
-			{
+				{
 					PropertyInfo thisProp = null;
 
 					string propName = props[i, 0];
 
 					for ( int j = 0; thisProp == null && j < allProps.Length; ++j )
-				{
+					{
 						if ( Insensitive.Equals( propName, allProps[j].Name ) )
 							thisProp = allProps[j];
 					}
@@ -1089,9 +1089,9 @@ namespace Server.Mobiles
 
 						if ( attr != null && AccessLevel.GameMaster >= attr.WriteLevel && thisProp.CanWrite && !attr.ReadOnly )
 							realProps[i] = thisProp;
+					}
 				}
 			}
-		}
 
 			ConstructorInfo[] ctors = type.GetConstructors();
 
@@ -1105,7 +1105,7 @@ namespace Server.Mobiles
 				ParameterInfo[] paramList = ctor.GetParameters();
 
 				if ( args.Length == paramList.Length )
-		{
+				{
 					object[] paramValues = Add.ParseValues( paramList, args );
 
 					if ( paramValues == null )
@@ -1114,9 +1114,9 @@ namespace Server.Mobiles
 					object built = ctor.Invoke( paramValues );
 
 					if ( built != null && realProps != null )
-			{
+					{
 						for ( int j = 0; j < realProps.Length; ++j )
-				{
+						{
 							if ( realProps[j] == null )
 								continue;
 
@@ -1147,55 +1147,55 @@ namespace Server.Mobiles
 			IEntity ent = CreateSpawnedObject( index );
 
 			if ( ent is Mobile )
-					{
+			{
 				Mobile m = (Mobile)ent;
 
-						m_Creatures.Add( m );
-						
+				m_Creatures.Add( m );
+				
 
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
 
-						m.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				m.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
 
-						m.MoveToWorld( loc, map );
+				m.MoveToWorld( loc, map );
 
-						if ( m is BaseCreature )
-						{
-							BaseCreature c = (BaseCreature)m;
-
+				if ( m is BaseCreature )
+				{
+					BaseCreature c = (BaseCreature)m;
+					
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
-							c.RangeHome = m_HomeRange;
+						c.RangeHome = m_HomeRange;
 
-							c.CurrentWayPoint = m_WayPoint;
+					c.CurrentWayPoint = m_WayPoint;
 
-							if ( m_Team > 0 )
-								c.Team = m_Team;
+					if ( m_Team > 0 )
+						c.Team = m_Team;
 
-							c.Home = this.Location;
-						}
+					c.Home = this.Location;
+				}
 
-						m.OnAfterSpawn();
-					}
+				m.OnAfterSpawn();
+			}
 			else if ( ent is Item )
-					{
+			{
 				Item item = (Item)ent;
 
-						m_Creatures.Add( item );
+				m_Creatures.Add( item );
 
-						Point3D loc = GetSpawnPosition();
+				Point3D loc = GetSpawnPosition();
 
-						item.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				item.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
-						item.MoveToWorld( loc, map );
+				item.MoveToWorld( loc, map );
 
-						item.OnAfterSpawn();
-					}
-				}
+				item.OnAfterSpawn();
+			}
+		}
 
 		public void SpawnA( int index )
 		{
@@ -1217,51 +1217,51 @@ namespace Server.Mobiles
 				Mobile m = (Mobile)ent;
 
 				m_CreaturesA.Add( m );
+				
 
-						
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
 
-						m.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				m.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
 
-						m.MoveToWorld( loc, map );
+				m.MoveToWorld( loc, map );
 
-						if ( m is BaseCreature )
-						{
-							BaseCreature c = (BaseCreature)m;
-
+				if ( m is BaseCreature )
+				{
+					BaseCreature c = (BaseCreature)m;
+					
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
-							c.RangeHome = m_HomeRange;
+						c.RangeHome = m_HomeRange;
 
-							c.CurrentWayPoint = m_WayPoint;
+					c.CurrentWayPoint = m_WayPoint;
 
-							if ( m_Team > 0 )
-								c.Team = m_Team;
+					if ( m_Team > 0 )
+						c.Team = m_Team;
 
-							c.Home = this.Location;
-						}
+					c.Home = this.Location;
+				}
 
-						m.OnAfterSpawn();
-					}
+				m.OnAfterSpawn();
+			}
 			else if ( ent is Item )
-					{
+			{
 				Item item = (Item)ent;
 
 				m_CreaturesA.Add( item );
 
-						Point3D loc = GetSpawnPosition();
+				Point3D loc = GetSpawnPosition();
 
-						item.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				item.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
-						item.MoveToWorld( loc, map );
+				item.MoveToWorld( loc, map );
 
-						item.OnAfterSpawn();
-					}
-				}
+				item.OnAfterSpawn();
+			}
+		}
 
 		public void SpawnB( int index )
 		{
@@ -1279,55 +1279,55 @@ namespace Server.Mobiles
 			IEntity ent = CreateSpawnedObjectB( index );
 
 			if ( ent is Mobile )
-				{
+			{
 				Mobile m = (Mobile)ent;
 
 				m_CreaturesB.Add( m );
+				
 
-						
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
 
-						m.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				m.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
 
-						m.MoveToWorld( loc, map );
+				m.MoveToWorld( loc, map );
 
-						if ( m is BaseCreature )
-						{
-							BaseCreature c = (BaseCreature)m;
-
+				if ( m is BaseCreature )
+				{
+					BaseCreature c = (BaseCreature)m;
+					
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
-							c.RangeHome = m_HomeRange;
+						c.RangeHome = m_HomeRange;
 
-							c.CurrentWayPoint = m_WayPoint;
+					c.CurrentWayPoint = m_WayPoint;
 
-							if ( m_Team > 0 )
-								c.Team = m_Team;
+					if ( m_Team > 0 )
+						c.Team = m_Team;
 
-							c.Home = this.Location;
-						}
+					c.Home = this.Location;
+				}
 
-						m.OnAfterSpawn();
-					}
+				m.OnAfterSpawn();
+			}
 			else if ( ent is Item )
-					{
+			{
 				Item item = (Item)ent;
 
 				m_CreaturesB.Add( item );
 
-						Point3D loc = GetSpawnPosition();
+				Point3D loc = GetSpawnPosition();
 
-						item.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				item.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
-						item.MoveToWorld( loc, map );
+				item.MoveToWorld( loc, map );
 
-						item.OnAfterSpawn();
-					}
-				}
+				item.OnAfterSpawn();
+			}
+		}
 
 		public void SpawnC( int index )
 		{
@@ -1349,51 +1349,51 @@ namespace Server.Mobiles
 				Mobile m = (Mobile)ent;
 
 				m_CreaturesC.Add( m );
+				
 
-						
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
 
-						m.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				m.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
 
-						m.MoveToWorld( loc, map );
+				m.MoveToWorld( loc, map );
 
-						if ( m is BaseCreature )
-						{
-							BaseCreature c = (BaseCreature)m;
-
+				if ( m is BaseCreature )
+				{
+					BaseCreature c = (BaseCreature)m;
+					
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
-							c.RangeHome = m_HomeRange;
+						c.RangeHome = m_HomeRange;
 
-							c.CurrentWayPoint = m_WayPoint;
+					c.CurrentWayPoint = m_WayPoint;
 
-							if ( m_Team > 0 )
-								c.Team = m_Team;
+					if ( m_Team > 0 )
+						c.Team = m_Team;
 
-							c.Home = this.Location;
-						}
+					c.Home = this.Location;
+				}
 
-						m.OnAfterSpawn();
-					}
+				m.OnAfterSpawn();
+			}
 			else if ( ent is Item )
-					{
+			{
 				Item item = (Item)ent;
 
 				m_CreaturesC.Add( item );
 
-						Point3D loc = GetSpawnPosition();
+				Point3D loc = GetSpawnPosition();
 
-						item.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				item.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
-						item.MoveToWorld( loc, map );
+				item.MoveToWorld( loc, map );
 
-						item.OnAfterSpawn();
-					}
-				}
+				item.OnAfterSpawn();
+			}
+		}
 
 		public void SpawnD( int index )
 		{
@@ -1411,55 +1411,55 @@ namespace Server.Mobiles
 			IEntity ent = CreateSpawnedObjectD( index );
 
 			if ( ent is Mobile )
-				{
+			{
 				Mobile m = (Mobile)ent;
 
 				m_CreaturesD.Add( m );
+				
 
-						
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
 
-						m.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				m.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
 
-						m.MoveToWorld( loc, map );
+				m.MoveToWorld( loc, map );
 
-						if ( m is BaseCreature )
-						{
-							BaseCreature c = (BaseCreature)m;
-
+				if ( m is BaseCreature )
+				{
+					BaseCreature c = (BaseCreature)m;
+					
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
-							c.RangeHome = m_HomeRange;
+						c.RangeHome = m_HomeRange;
 
-							c.CurrentWayPoint = m_WayPoint;
+					c.CurrentWayPoint = m_WayPoint;
 
-							if ( m_Team > 0 )
-								c.Team = m_Team;
+					if ( m_Team > 0 )
+						c.Team = m_Team;
 
-							c.Home = this.Location;
-						}
+					c.Home = this.Location;
+				}
 
-						m.OnAfterSpawn();
-					}
+				m.OnAfterSpawn();
+			}
 			else if ( ent is Item )
-					{
+			{
 				Item item = (Item)ent;
 
 				m_CreaturesD.Add( item );
 
-						Point3D loc = GetSpawnPosition();
+				Point3D loc = GetSpawnPosition();
 
-						item.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				item.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
-						item.MoveToWorld( loc, map );
+				item.MoveToWorld( loc, map );
 
-						item.OnAfterSpawn();
-					}
-				}
+				item.OnAfterSpawn();
+			}
+		}
 
 		public void SpawnE( int index )
 		{
@@ -1481,51 +1481,51 @@ namespace Server.Mobiles
 				Mobile m = (Mobile)ent;
 
 				m_CreaturesE.Add( m );
+				
 
-						
 				Point3D loc = ( m is BaseVendor ? this.Location : GetSpawnPosition() );
 
-						m.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				m.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
 
-						m.MoveToWorld( loc, map );
+				m.MoveToWorld( loc, map );
 
-						if ( m is BaseCreature )
-						{
-							BaseCreature c = (BaseCreature)m;
-
+				if ( m is BaseCreature )
+				{
+					BaseCreature c = (BaseCreature)m;
+					
 					if( m_WalkingRange >= 0 )
 						c.RangeHome = m_WalkingRange;
 					else
-							c.RangeHome = m_HomeRange;
+						c.RangeHome = m_HomeRange;
 
-							c.CurrentWayPoint = m_WayPoint;
+					c.CurrentWayPoint = m_WayPoint;
 
-							if ( m_Team > 0 )
-								c.Team = m_Team;
+					if ( m_Team > 0 )
+						c.Team = m_Team;
 
-							c.Home = this.Location;
-						}
+					c.Home = this.Location;
+				}
 
-						m.OnAfterSpawn();
-					}
+				m.OnAfterSpawn();
+			}
 			else if ( ent is Item )
-					{
+			{
 				Item item = (Item)ent;
 
 				m_CreaturesE.Add( item );
 
-						Point3D loc = GetSpawnPosition();
+				Point3D loc = GetSpawnPosition();
 
-						item.OnBeforeSpawn( loc, map );
-						InvalidateProperties();
+				item.OnBeforeSpawn( loc, map );
+				InvalidateProperties();
 
-						item.MoveToWorld( loc, map );
+				item.MoveToWorld( loc, map );
 
-						item.OnAfterSpawn();
-					}
-				}
+				item.OnAfterSpawn();
+			}
+		}
 
 		public Point3D GetSpawnPosition()
 		{
@@ -1549,11 +1549,11 @@ namespace Server.Mobiles
 
 				int z = Map.GetAverageZ( x, y );
 
-					if ( Map.CanSpawnMobile( new Point2D( x, y ), this.Z ) )
-						return new Point3D( x, y, this.Z );
-					else if ( Map.CanSpawnMobile( new Point2D( x, y ), z ) )
-						return new Point3D( x, y, z );
-				}
+				if ( Map.CanSpawnMobile( new Point2D( x, y ), this.Z ) )
+					return new Point3D( x, y, this.Z );
+				else if ( Map.CanSpawnMobile( new Point2D( x, y ), z ) )
+					return new Point3D( x, y, z );
+			}
 
 			return this.Location;
 		}
@@ -1590,7 +1590,7 @@ namespace Server.Mobiles
 
 			public InternalTimer( PremiumSpawner spawner, TimeSpan delay ) : base( delay )
 			{
-				if ( spawner.IsFull || spawner.IsFulla || spawner.IsFullb || spawner.IsFullc || spawner.IsFulld || spawner.IsFulle)
+				if ( spawner.IsFull || spawner.IsFulla || spawner.IsFullb || spawner.IsFullc || spawner.IsFulld || spawner.IsFulle )
 					Priority = TimerPriority.FiveSeconds;
 				else
 					Priority = TimerPriority.OneSecond;
@@ -2139,7 +2139,7 @@ namespace Server.Mobiles
 				case 1:
 				{
 					m_Group = reader.ReadBool();
-
+					
 					goto case 0;
 				}
 
@@ -2156,7 +2156,7 @@ namespace Server.Mobiles
 
 					if ( m_Running )
 						ts = reader.ReadDeltaTime() - DateTime.Now;
- 
+					
 					int size = reader.ReadInt();
 					m_CreaturesName = new List<string>( size );
 					for ( int i = 0; i < size; ++i )

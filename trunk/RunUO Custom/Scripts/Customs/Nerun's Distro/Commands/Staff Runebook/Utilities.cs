@@ -121,11 +121,8 @@ namespace Joeku.SR
 			new Point2D( 7168, 4096 ),	// Felucca
 			new Point2D( 7168, 4096 ),	// Trammel
 			new Point2D( 2304, 1600 ),	// Ilshenar
-			new Point2D( 2560, 2048 ),	// Malas
 			new Point2D( 1448, 1448 ),	// Tokuno
-			#region SA
-			new Point2D( 1280, 4096 ) 	// TerMur
-			#endregion
+			new Point2D( 1280, 4096 )	// TerMur
 		};
 
 		public static int MapInt( Map map )
@@ -142,10 +139,8 @@ namespace Joeku.SR
 				i = 3;
 			else if( map == Map.Tokuno )
 				i = 4;
-			#region SA
 			else if( map == Map.TerMur )
 				i = 5;
-			#endregion
 
 			return i;
 		}
@@ -159,9 +154,7 @@ namespace Joeku.SR
 			acc.AddRune( AddTree( GoGump.Ilshenar, Map.Ilshenar ) );
 			acc.AddRune( AddTree( GoGump.Malas, Map.Malas ) );
 			acc.AddRune( AddTree( GoGump.Tokuno, Map.Tokuno ) );
-			#region SA
 			acc.AddRune( AddTree( GoGump.TerMur, Map.TerMur ) );
-			#endregion
 		}
 		private static SR_Rune AddTree( LocationTree tree, Map map )
 		{

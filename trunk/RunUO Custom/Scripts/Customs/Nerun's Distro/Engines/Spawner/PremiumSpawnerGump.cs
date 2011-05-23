@@ -119,7 +119,7 @@ namespace Server.Mobiles
 				}
 
 				AddTextEntry( 75, ( 22 * i ) + 21, 114, 21, 0, 200 + i, str );
-		}
+			}
 
 			AddPage( 3 );
 
@@ -160,7 +160,7 @@ namespace Server.Mobiles
 				string str = "";
 
 				if ( i < spawner.SubSpawnerB.Count )
-		{
+				{
 					str = (string)spawner.SubSpawnerB[i];
 					int count = m_Spawner.CountCreaturesB( str );
 

@@ -281,11 +281,11 @@ namespace Server
 						case "Tokuno":
 							mapnumber = 5;
 							break;
-						/*case "TerMur":
+						case "TerMur":
 							mapnumber = 6;
-							break;*/
+							break;
 						default:
-							mapnumber = 6; //7;
+							mapnumber = 7;
 							Console.WriteLine( "Monster Parser: Warning, unknown map {0}", itemsave2.Map );
 							break;
 					}
@@ -387,7 +387,7 @@ namespace Server
 			}
 
 			DateTime endTime = DateTime.Now;
-			World.Broadcast( 0x35, true, "{0} spawns have been saved. The entire process took {1:F1} seconds.", count, (endTime - startTime).TotalSeconds );
+			World.Broadcast( 0x35, true, "{0} spawns had been saved. The entire process took {1:F1} seconds.", count, (endTime - startTime).TotalSeconds );
 		}
 
 		public static void Parse( Mobile from, string filename )
@@ -486,7 +486,7 @@ namespace Server
 
 			TimeSpan maxtime = TimeSpan.FromMinutes( dmaxtime );
 			int homerange = Utility.ToInt32( shomerange );
-			int walkingrange = Utility.ToInt32( swalkingrange );
+		        int walkingrange = Utility.ToInt32( swalkingrange );
 			int spawnid = Utility.ToInt32( sspawnid );
 			int npccount = Utility.ToInt32( snpccount );
 			int fakecountA = Utility.ToInt32( sfakecountA );
@@ -522,9 +522,9 @@ namespace Server
 				case 5://Tokuno
 					MakeSpawner( types, fakespawnsA, fakespawnsB, fakespawnsC, fakespawnsD, fakespawnsE, x, y, z, Map.Maps[4], mintime, maxtime, walkingrange, homerange, spawnid, npccount, fakecountA, fakecountB, fakecountC, fakecountD, fakecountE );
 					break;
-				/*case 6://TerMur
+				case 6://TerMur
 					MakeSpawner( types, fakespawnsA, fakespawnsB, fakespawnsC, fakespawnsD, fakespawnsE, x, y, z, Map.Maps[5], mintime, maxtime, walkingrange, homerange, spawnid, npccount, fakecountA, fakecountB, fakecountC, fakecountD, fakecountE );
-					break;*/
+					break;
 
 				default:
 					Console.WriteLine( "Spawn Parser: Warning, unknown map {0}", map );
