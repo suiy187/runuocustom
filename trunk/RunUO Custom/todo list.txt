@@ -3,3 +3,4 @@ To Do List:
 -Update/Fix Nerun's Distro
 -Update Talismans
 -Overhaul Data
+-Fix DecorateML (found some weird bug related to it or something from ML added from it)
