@@ -1,3 +1,4 @@
 To Do List:
 
 -Update/Fix Nerun's Distro
+-Update Talismans
