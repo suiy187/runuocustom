@@ -321,7 +321,6 @@ namespace Server.Engines.Craft
             }
             #endregion
             #endregion
-            #endregion
 
             #region Footwear
 
