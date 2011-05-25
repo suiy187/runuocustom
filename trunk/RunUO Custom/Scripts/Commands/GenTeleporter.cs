@@ -1088,6 +1088,14 @@ namespace Server.Commands
                 //Abyssal Inferno Spawn to Abyss
                 CreateTeleporter(7149, 756, 25, 511, 585, 11, map, Map.Felucca, false);
 
+                #region SA
+                // Abyss to Abyssal Inferno Spawn
+                CreateTeleporter(974, 419, -21, 7150, 755, 26, map, Map.Felucca, false);
+                CreateTeleporter(975, 419, -21, 7151, 755, 26, map, Map.Felucca, false);
+                CreateTeleporter(976, 419, -21, 7152, 755, 26, map, Map.Felucca, false);
+                CreateTeleporter(977, 419, -21, 7153, 755, 26, map, Map.Felucca, false);
+                #endregion
+
                 //Underworld to fireisland
                 CreateTeleporter(1125, 1215, 5, 4194, 3261, 5, map, Map.Trammel, false);
                 CreateTeleporter(1126, 1215, 5, 4194, 3261, 5, map, Map.Trammel, false);
@@ -1141,6 +1149,16 @@ namespace Server.Commands
                 CreateTeleporter(6992, 1367, -15, 511, 585, 11, map, Map.TerMur, false);
                 CreateTeleporter(6993, 1367, -15, 512, 585, 11, map, Map.TerMur, false);
                 CreateTeleporter(6994, 1367, -15, 513, 585, 11, map, Map.TerMur, false);
+
+                #region SA
+                // Abyssal Inferno Spawn to Abyss
+                CreateTeleporter(7149, 756, 27, 974, 420, -19, map, Map.TerMur, false);
+                CreateTeleporter(7150, 756, 27, 974, 420, -19, map, Map.TerMur, false);
+                CreateTeleporter(7151, 756, 27, 975, 420, -19, map, Map.TerMur, false);
+                CreateTeleporter(7152, 756, 27, 976, 420, -19, map, Map.TerMur, false);
+                CreateTeleporter(7153, 756, 27, 977, 420, -19, map, Map.TerMur, false);
+                CreateTeleporter(7154, 756, 27, 977, 420, -19, map, Map.TerMur, false);
+                #endregion
 			}
 
 			public int CreateTeleporters()
