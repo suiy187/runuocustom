@@ -1,0 +1,30 @@
+Marlando ORB SA SVN Change Log
+
+*****Updated*****
+
+Updated All Weapons + Added Missing
+Updated DefCraft Files for Missing Items
+Updated Powerscrolls
+Updated Navery (closer to OSI)
+Updated Telegen
+Updated Neruns Create World (1 command World Spawn)
+Updated XML Spawner System
+Updated PlayerMobile (Queens Loyalty System)
+Updated Various single scripts for content.
+
+
+*****Added*****
+
+Added Vernix Quest
+Added SA Hidden Walls (Acid Sacs targeting)
+Added SA Decoration (for Hidden walls)
+Added Silver Sapling (Resurrection in abyss)
+Added Mini Champs (possible no osi like??)
+Added Primevil Lich Puzzle.
+Added TerMur Quests Percolem.(Tiered)
+Added Agrelem Quests (Tiered)
+Added Axem Quests (Tiered)
+Added KeyQuests
+
+
+
