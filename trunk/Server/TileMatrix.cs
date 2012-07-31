@@ -5,7 +5,7 @@
  *   copyright            : (C) The RunUO Software Team
  *   email                : info@runuo.com
  *
- *   $Id: TileMatrix.cs 884 2012-06-02 00:52:27Z eos $
+ *   $Id: TileMatrix.cs 895 2012-07-31 07:07:44Z eos $
  *
  ***************************************************************************/
 
@@ -721,7 +721,10 @@ namespace Server
 					int offset = m_Reader.ReadInt32();
 
 					if ( offset == 0 )
-						break;
+					{
+						stream.Seek( 30, SeekOrigin.Current );
+						continue;
+					}
 
 					m_Reader.ReadInt64();
 					int length = m_Reader.ReadInt32();
