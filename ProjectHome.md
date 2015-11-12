@@ -1,0 +1,1 @@
+RunUO w/ Custom Scripting.  This is a learning project aimed at adding new features and content to the RunUO program with a focus on OSI-like accuracy.  Scripting may not always be optimal but we learn from our mistakes.
